@@ -12,6 +12,8 @@ public class PlayerMover : MonoBehaviour
     private bool _isGrounded;
 
     private string _nameAnimationGrounded = "IsGrounded";
+    private string _nameAnimationWalking = "Walking";
+    private string _nameTagGround = "Ground";
 
     private void Start()
     {
@@ -36,7 +38,7 @@ public class PlayerMover : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == _nameTagGround)
         {
             _isGrounded = true;
         }
@@ -44,7 +46,7 @@ public class PlayerMover : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == _nameTagGround)
         {
             _isGrounded = false;
         }
@@ -55,25 +57,25 @@ public class PlayerMover : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             transform.Translate(_speed * Time.deltaTime, 0, 0);
-            _animator.SetBool("Walking", true);
+            _animator.SetBool(_nameAnimationWalking, true);
             transform.localScale = new Vector3(1, 1, 1);
         }
 
         if (Input.GetKeyUp(KeyCode.D))
         {
-            _animator.SetBool("Walking", false);
+            _animator.SetBool(_nameAnimationWalking, false);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
             transform.Translate(_speed * Time.deltaTime * -1, 0, 0);
-            _animator.SetBool("Walking", true);
+            _animator.SetBool(_nameAnimationWalking, true);
             transform.localScale = new Vector3(-1, 1, 1);
         }
 
         if (Input.GetKeyUp(KeyCode.A))
         {
-            _animator.SetBool("Walking", false);
+            _animator.SetBool(_nameAnimationWalking, false);
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && _isGrounded)
