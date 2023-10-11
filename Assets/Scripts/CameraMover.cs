@@ -4,10 +4,11 @@ public class CameraMover : MonoBehaviour
 {
     [SerializeField] private Transform _camera;
 
-    [SerializeField] private float _adjustingCameraPositionRelativeToPlayer;
+    [SerializeField] private float _followingCameraToPlayer;
 
     private void Update()
     {
-        _camera.position = new Vector3(transform.position.x, transform.position.y + _adjustingCameraPositionRelativeToPlayer, _camera.position.z);
+        _camera.position = new Vector3(transform.position.x, transform.position.y
+            + _followingCameraToPlayer, _camera.position.z);
     }
 }

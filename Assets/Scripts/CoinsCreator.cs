@@ -33,7 +33,8 @@ public class CoinsCreator : MonoBehaviour
         {
             int currentPosition = Random.Range(0, _points.Count);
 
-            Instantiate(_coinPrefab, new Vector3(_points[currentPosition].position.x, _points[currentPosition].position.y, 0), Quaternion.identity);
+            Instantiate(_coinPrefab, new Vector3(_points[currentPosition].position.x,
+                        _points[currentPosition].position.y, 0), Quaternion.identity);
 
             _points.Remove(_points[currentPosition]);
         }

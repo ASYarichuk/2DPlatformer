@@ -12,9 +12,9 @@ public class PlayerMover : MonoBehaviour
 
     private bool _isGrounded;
 
-    private string _nameAnimationGrounded = "IsGrounded";
-    private string _nameAnimationWalking = "Walking";
-    private string _nameTagGround = "Ground";
+    private readonly string _nameAnimationGrounded = "IsGrounded";
+    private readonly string _nameAnimationWalking = "Walking";
+    private readonly string _nameTagGround = "Ground";
 
     private void Start()
     {
