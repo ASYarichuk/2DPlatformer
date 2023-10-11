@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CoinsCreator : MonoBehaviour
 {
-    [SerializeField] private GameObject _coinPrefab;
+    [SerializeField] private Coin _coinPrefab;
     [SerializeField] private Transform _pointsCreationCoins;
 
     [SerializeField] private int _amountCoinsOnMap;
